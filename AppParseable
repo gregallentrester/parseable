@@ -1,0 +1,39 @@
+
+
+Darwin Kernel Version 21.6.0: Sat Jun 18 17:05:47 PDT 2022; root:xnu-8020.140.41~1/RELEASE_ARM64_T8101
+Darwin Kernel Version 21.6.0:
+Sat Jun 18 17:05:47 PDT 2022;
+root:xnu-8020.140.41~1/RELEASE_ARM64_T8101
+
+
+Darwin greg.local 21.6.0 Darwin Kernel Version 21.6.0: Sat Jun 18 17:05:47 PDT 2022; root:xnu-8020.140.41~1/RELEASE_ARM64_T8101 arm64
+Darwin greg.local 21.6.0 Darwin Kernel Version 21.6.0:
+Sat Jun 18 17:05:47 PDT 2022;
+root:xnu-8020.140.41~1/RELEASE_ARM64_T8101 arm64
+
+
+
+
+
+GG=$(uname -a)
+
+cls
+ONE=$(echo "$GG" | cut -d':' -f 1)
+
+
+THREE=$(echo "$GG" | cut -d';' -f 2)
+echo;echo $THREE;echo;echo
+
+
+A="$(echo ${#GG})"
+C="$(echo ${#THREE})"
+
+BSTART="$(echo ${#ONE})"
+STARTB="$(($BSTART + 2))"
+SPAN="$(($A - $C - 1))"
+TWO=$(cut -c $STARTB-$SPAN<<< $GG)
+
+
+printf "$GRN$ONE$NC"
+printf "$GRN$TWO$NC"
+printf "$GRN$THREE$NC"
